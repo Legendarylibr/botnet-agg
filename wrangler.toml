@@ -1,0 +1,24 @@
+name = "botnet-tracker-worker"
+main = "src/worker.js"
+compatibility_date = "2026-02-21"
+
+[vars]
+RATE_WINDOW_SECONDS = "60"
+RATE_MAX_REQUESTS = "180"
+BURST_WINDOW_SECONDS = "10"
+BURST_MAX_REQUESTS = "30"
+BLOCK_TTL_SECONDS = "3600"
+PROTECTED_PATH_PREFIXES = "*"
+ADMIN_PATH_PREFIX = "/__botnet"
+ALLOWLIST_IPS = ""
+SUSPICIOUS_PATH_PATTERNS = "/wp-login.php,/xmlrpc.php,/wp-admin,/.env,/cgi-bin,/boaform"
+BAD_USER_AGENT_PATTERNS = "python-requests,curl/,wget/,sqlmap,masscan,nmap,zgrab,go-http-client"
+BOT_SCORE_TTL_SECONDS = "900"
+BOT_SCORE_BLOCK_THRESHOLD = "6"
+BOT_SCORE_PATH_WEIGHT = "3"
+BOT_SCORE_USER_AGENT_WEIGHT = "2"
+
+[[kv_namespaces]]
+binding = "BOTNET_KV"
+id = "PUT_YOUR_KV_NAMESPACE_ID_HERE"
+preview_id = "PUT_YOUR_KV_PREVIEW_NAMESPACE_ID_HERE"
